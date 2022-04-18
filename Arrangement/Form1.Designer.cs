@@ -675,6 +675,7 @@
             this.resultExpBtn2.TabIndex = 36;
             this.resultExpBtn2.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn2.UseVisualStyleBackColor = true;
+            this.resultExpBtn2.Click += new System.EventHandler(this.resultExpBtn2_Click_1);
             // 
             // resultGrid2
             // 
