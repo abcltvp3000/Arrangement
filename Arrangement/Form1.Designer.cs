@@ -139,7 +139,6 @@
             this.statImpExcel.Size = new System.Drawing.Size(153, 15);
             this.statImpExcel.TabIndex = 2;
             this.statImpExcel.Text = "Nhập thêm dữ liệu từ Excel:";
-            this.statImpExcel.Click += new System.EventHandler(this.statImpExcel_Click);
             // 
             // statImpBtn
             // 
@@ -171,7 +170,6 @@
             this.statImpName.Size = new System.Drawing.Size(153, 15);
             this.statImpName.TabIndex = 6;
             this.statImpName.Text = "Chưa có file nào được chọn";
-            this.statImpName.Click += new System.EventHandler(this.statImpName_Click);
             // 
             // needHead
             // 
@@ -344,7 +342,6 @@
             this.statImpName2.Size = new System.Drawing.Size(153, 15);
             this.statImpName2.TabIndex = 31;
             this.statImpName2.Text = "Chưa có file nào được chọn";
-            this.statImpName2.Click += new System.EventHandler(this.statImpName2_Click);
             // 
             // allExpBtn
             // 
@@ -366,7 +363,6 @@
             this.statTabCtrl.SelectedIndex = 0;
             this.statTabCtrl.Size = new System.Drawing.Size(648, 247);
             this.statTabCtrl.TabIndex = 36;
-            this.statTabCtrl.SelectedIndexChanged += new System.EventHandler(this.statTabCtrl_SelectedIndexChanged);
             // 
             // statList
             // 
@@ -881,7 +877,6 @@
             this.Controls.Add(this.statTabCtrl);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.needGrid)).EndInit();
             this.statTabCtrl.ResumeLayout(false);
             this.statList.ResumeLayout(false);

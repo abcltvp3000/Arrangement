@@ -672,10 +672,6 @@ namespace Arrangement
             expExcel(statFullGrid, "DS đề xuất đầy đủ");
         }
 
-        private void statTabCtrl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 fr2 = new Form2();
@@ -816,31 +812,6 @@ namespace Arrangement
         private void needSampleBtn_Click(object sender, EventArgs e)
         {
             copySampleFile("DS thống kê theo điểm thi", "3_DanhSachThongKeDiemThi.xlsx");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statImpExcel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statImpName2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void statImpName_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void resultExpBtn_Click_1(object sender, EventArgs e)
