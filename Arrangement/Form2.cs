@@ -30,10 +30,13 @@ namespace Arrangement
                 return;
             }
 
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            app.Visible = true;
+            app.Visible = false;
             worksheet = workbook.Sheets["Sheet1"];
             worksheet = workbook.ActiveSheet;
             worksheet.Name = title;
@@ -58,8 +61,15 @@ namespace Arrangement
                     worksheet.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
                 }
             }
+            for (int i = 1; i < grid.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i].EntireColumn.AutoFit();
+            }
             workbook.SaveAs(path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             app.Quit();
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

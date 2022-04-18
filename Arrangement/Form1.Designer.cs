@@ -30,9 +30,7 @@
         {
             this.statHead = new System.Windows.Forms.Label();
             this.statImpExcel = new System.Windows.Forms.Label();
-            this.statImpBtn = new System.Windows.Forms.Button();
             this.statAcpImpBtn = new System.Windows.Forms.Button();
-            this.statImpName = new System.Windows.Forms.Label();
             this.needHead = new System.Windows.Forms.Label();
             this.needImpName = new System.Windows.Forms.Label();
             this.needExpBtn = new System.Windows.Forms.Button();
@@ -100,12 +98,10 @@
             this.res2T4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.needTabCtrl = new System.Windows.Forms.TabControl();
             this.needTab = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.statAllExpBtn = new System.Windows.Forms.Button();
             this.statSampleBtn = new System.Windows.Forms.Button();
-            this.statSampleBtn2 = new System.Windows.Forms.Button();
             this.needSampleBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.needGrid)).BeginInit();
             this.statTabCtrl.SuspendLayout();
             this.statList.SuspendLayout();
@@ -140,36 +136,16 @@
             this.statImpExcel.TabIndex = 2;
             this.statImpExcel.Text = "Nhập thêm dữ liệu từ Excel:";
             // 
-            // statImpBtn
-            // 
-            this.statImpBtn.AutoSize = true;
-            this.statImpBtn.Location = new System.Drawing.Point(174, 93);
-            this.statImpBtn.Name = "statImpBtn";
-            this.statImpBtn.Size = new System.Drawing.Size(167, 25);
-            this.statImpBtn.TabIndex = 3;
-            this.statImpBtn.Text = "Chọn file (mẫu bên dưới)";
-            this.statImpBtn.UseVisualStyleBackColor = true;
-            this.statImpBtn.Click += new System.EventHandler(this.statImpBtn_Click);
-            // 
             // statAcpImpBtn
             // 
             this.statAcpImpBtn.AutoSize = true;
-            this.statAcpImpBtn.Location = new System.Drawing.Point(174, 124);
+            this.statAcpImpBtn.Location = new System.Drawing.Point(174, 93);
             this.statAcpImpBtn.Name = "statAcpImpBtn";
             this.statAcpImpBtn.Size = new System.Drawing.Size(75, 25);
             this.statAcpImpBtn.TabIndex = 4;
             this.statAcpImpBtn.Text = "Xác nhận";
             this.statAcpImpBtn.UseVisualStyleBackColor = true;
             this.statAcpImpBtn.Click += new System.EventHandler(this.statAcpImpBtn_Click);
-            // 
-            // statImpName
-            // 
-            this.statImpName.AutoSize = true;
-            this.statImpName.Location = new System.Drawing.Point(354, 98);
-            this.statImpName.Name = "statImpName";
-            this.statImpName.Size = new System.Drawing.Size(153, 15);
-            this.statImpName.TabIndex = 6;
-            this.statImpName.Text = "Chưa có file nào được chọn";
             // 
             // needHead
             // 
@@ -328,16 +304,16 @@
             this.impStatBtn2.AutoSize = true;
             this.impStatBtn2.Location = new System.Drawing.Point(174, 62);
             this.impStatBtn2.Name = "impStatBtn2";
-            this.impStatBtn2.Size = new System.Drawing.Size(167, 25);
+            this.impStatBtn2.Size = new System.Drawing.Size(75, 25);
             this.impStatBtn2.TabIndex = 30;
-            this.impStatBtn2.Text = "Chọn file (mẫu đầy đủ)";
+            this.impStatBtn2.Text = "Chọn file";
             this.impStatBtn2.UseVisualStyleBackColor = true;
             this.impStatBtn2.Click += new System.EventHandler(this.impStatBtn2_Click);
             // 
             // statImpName2
             // 
             this.statImpName2.AutoSize = true;
-            this.statImpName2.Location = new System.Drawing.Point(354, 67);
+            this.statImpName2.Location = new System.Drawing.Point(255, 67);
             this.statImpName2.Name = "statImpName2";
             this.statImpName2.Size = new System.Drawing.Size(153, 15);
             this.statImpName2.TabIndex = 31;
@@ -778,17 +754,6 @@
             this.needTab.Text = "Danh sách thống kê";
             this.needTab.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(418, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 25);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Xóa dữ liệu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.AutoSize = true;
@@ -799,17 +764,6 @@
             this.button2.Text = "Xem danh sách phân công ngẫu nhiên";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // statAllExpBtn
-            // 
-            this.statAllExpBtn.AutoSize = true;
-            this.statAllExpBtn.Location = new System.Drawing.Point(512, 148);
-            this.statAllExpBtn.Name = "statAllExpBtn";
-            this.statAllExpBtn.Size = new System.Drawing.Size(143, 25);
-            this.statAllExpBtn.TabIndex = 41;
-            this.statAllExpBtn.Text = "Xuất dữ liệu ra file Excel";
-            this.statAllExpBtn.UseVisualStyleBackColor = true;
-            this.statAllExpBtn.Click += new System.EventHandler(this.statAllExpBtn_Click);
             // 
             // statSampleBtn
             // 
@@ -822,17 +776,6 @@
             this.statSampleBtn.UseVisualStyleBackColor = true;
             this.statSampleBtn.Click += new System.EventHandler(this.statSampleBtn_Click);
             // 
-            // statSampleBtn2
-            // 
-            this.statSampleBtn2.AutoSize = true;
-            this.statSampleBtn2.Location = new System.Drawing.Point(613, 93);
-            this.statSampleBtn2.Name = "statSampleBtn2";
-            this.statSampleBtn2.Size = new System.Drawing.Size(42, 25);
-            this.statSampleBtn2.TabIndex = 43;
-            this.statSampleBtn2.Text = "Mẫu";
-            this.statSampleBtn2.UseVisualStyleBackColor = true;
-            this.statSampleBtn2.Click += new System.EventHandler(this.statSampleBtn2_Click);
-            // 
             // needSampleBtn
             // 
             this.needSampleBtn.AutoSize = true;
@@ -844,6 +787,17 @@
             this.needSampleBtn.UseVisualStyleBackColor = true;
             this.needSampleBtn.Click += new System.EventHandler(this.needSampleBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(516, 148);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 25);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Xóa dữ liệu cả hai bảng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -851,12 +805,10 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1324, 724);
-            this.Controls.Add(this.needSampleBtn);
-            this.Controls.Add(this.statSampleBtn2);
-            this.Controls.Add(this.statSampleBtn);
-            this.Controls.Add(this.statAllExpBtn);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.needSampleBtn);
+            this.Controls.Add(this.statSampleBtn);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.needTabCtrl);
             this.Controls.Add(this.resTabCtrl);
             this.Controls.Add(this.statImpName2);
@@ -869,9 +821,7 @@
             this.Controls.Add(this.needImpBtn);
             this.Controls.Add(this.needImpExcel);
             this.Controls.Add(this.needHead);
-            this.Controls.Add(this.statImpName);
             this.Controls.Add(this.statAcpImpBtn);
-            this.Controls.Add(this.statImpBtn);
             this.Controls.Add(this.statImpExcel);
             this.Controls.Add(this.statHead);
             this.Controls.Add(this.statTabCtrl);
@@ -905,9 +855,7 @@
         private Label statHead;
         private DataGridViewTextBoxColumn schoolCode;
         private Label statImpExcel;
-        private Button statImpBtn;
         private Button statAcpImpBtn;
-        private Label statImpName;
         private Label needHead;
         private Label needImpName;
         private Button needExpBtn;
@@ -950,7 +898,6 @@
         private DataGridViewTextBoxColumn statFullSchool;
         private DataGridViewTextBoxColumn statFullName;
         private DataGridViewTextBoxColumn statFullJob;
-        private Button button1;
         private DataGridViewTextBoxColumn resSchoolCode;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn resGroup;
@@ -977,9 +924,8 @@
         private DataGridViewTextBoxColumn res2T3;
         private DataGridViewTextBoxColumn res2T4;
         private Button button2;
-        private Button statAllExpBtn;
         private Button statSampleBtn;
-        private Button statSampleBtn2;
         private Button needSampleBtn;
+        private Button button1;
     }
 }

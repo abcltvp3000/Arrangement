@@ -42,13 +42,13 @@ namespace Arrangement
         string statImpPath = "";
         bool statImpType = false;
         bool is_Calc = false;
-        private void statImpBtn_Click(object sender, EventArgs e)
+        /*private void statImpBtn_Click(object sender, EventArgs e)
         {
             statImpType = false;
             statImpPath = showExcelDialog("DS đề xuất theo đơn vị");
             statImpName.Text = (statImpPath == "" ? "Chưa có file nào được chọn": compressPath(statImpPath));
             statImpName2.Text = "Chưa có file nào được chọn";
-        }
+        }*/
 
         string objToString(object o)
         {
@@ -108,6 +108,22 @@ namespace Arrangement
             return str;
         }
 
+        string reverseStr(string str)
+        {
+            string rStr = "";
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                rStr += str[i];
+            }
+            return rStr;
+        }
+
+        string standardStr(string str)
+        {
+            str = str.Trim();
+            return str;
+        }
+
         Dictionary<string, List<string>[]> statNames = new Dictionary<string, List<string>[]>();
         public void impStatGrid(string path)
         {
@@ -115,6 +131,9 @@ namespace Arrangement
             var reader = ExcelReaderFactory.CreateReader(stream);
             var result = reader.AsDataSet();
             var tables = result.Tables.Cast<DataTable>();
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             if (!statImpType) {
                 foreach (DataTable table in tables)
                 {
@@ -130,6 +149,7 @@ namespace Arrangement
             }
             else
             {
+                //MessageBox.Show(standardStr("   Hello   "));
                 Dictionary<string, string> schoolNames = new Dictionary<string, string>();
                 Dictionary<string, int[]> statSchool = new Dictionary<string, int[]>();
                 foreach (DataTable table in tables)
@@ -162,7 +182,8 @@ namespace Arrangement
                             statSchool[code][jobType]++;
                             statFullGrid.Rows.Add();
                             statFullGrid.Rows[count].Cells[0].Value = code;
-                            statFullGrid.Rows[count].Cells[1].Value = schoolNames[code];
+                            statFullGrid.Rows[count].Cells[1].Value = standardStr(schoolNames[code]);
+                            //statFullGrid.Rows[count].Cells[1].Value = "   Hello   ";
                             statFullGrid.Rows[count].Cells[2].Value = fullName;
                             statFullGrid.Rows[count].Cells[3].Value = str;
                             count++;
@@ -178,7 +199,8 @@ namespace Arrangement
                     if (sum == 0) continue;
                     statGrid.Rows.Add();
                     statGrid.Rows[count].Cells[0].Value = school.Key;
-                    statGrid.Rows[count].Cells[1].Value = schoolNames[school.Key];
+                    statGrid.Rows[count].Cells[1].Value = standardStr(schoolNames[school.Key]);
+                    //statGrid.Rows[count].Cells[1].Value = "   Hello   ";
                     for (int j = 0; j < 5; j++)
                     {
                         statGrid.Rows[count].Cells[2 + j].Value = school.Value[j];
@@ -187,6 +209,10 @@ namespace Arrangement
                 }
             }
             stream.Close();
+
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void statAcpImpBtn_Click(object sender, EventArgs e)
@@ -209,11 +235,14 @@ namespace Arrangement
             {
                 return;
             }
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
 
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = false;
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            app.Visible = true;
             worksheet = workbook.Sheets["Sheet1"];
             worksheet = workbook.ActiveSheet;
             worksheet.Name = title;
@@ -238,8 +267,15 @@ namespace Arrangement
                     worksheet.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
                 }
             }
+            for (int i = 1; i < grid.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i].EntireColumn.AutoFit();
+            }
             workbook.SaveAs(path, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             app.Quit();
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void statExpBtn_Click(object sender, EventArgs e)
@@ -261,18 +297,49 @@ namespace Arrangement
             var reader = ExcelReaderFactory.CreateReader(stream);
             var result = reader.AsDataSet();
             var tables = result.Tables.Cast<DataTable>();
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             foreach (DataTable table in tables)
             {
                 if (table.Columns.Count != needGrid.Columns.Count)
                 {
                     continue;
                 }
+
+                int count = needGrid.Rows.Count - 1;
                 for (int i = 1; i < table.Rows.Count; i++)
                 {
-                    needGrid.Rows.Add(table.Rows[i].ItemArray);
+                    int sum = 0;
+                    for (int j = 0; j < 5; j++)
+                    {
+                        string str = objToString(table.Rows[i][2 + j]);
+                        if (str == "") str = "0";
+                        try
+                        {
+                            sum += Convert.ToInt32(str);
+                        }
+                        catch (Exception) { }
+                    }
+                    if (sum == 0) continue;
+                    needGrid.Rows.Add();
+                    needGrid.Rows[count].Cells[0].Value = objToString(table.Rows[i][0]);
+                    needGrid.Rows[count].Cells[1].Value = standardStr(objToString(table.Rows[i][1]));
+                    for (int j = 0; j < 5; j++)
+                    {
+                        needGrid.Rows[count].Cells[2 + j].Value = table.Rows[i][j + 2];
+                    }
+                    count++;
                 }
+                /*for (int i = 1; i < table.Rows.Count; i++)
+                {
+                    needGrid.Rows.Add(table.Rows[i].ItemArray);
+                }*/
             }
             stream.Close();
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void needAcpImpBtn_Click(object sender, EventArgs e)
@@ -292,14 +359,60 @@ namespace Arrangement
         int[][][] result = new int[0][][];
         Dictionary<string, string> schoolNames = new Dictionary<string, string>();
         Dictionary<string, int> schools = new Dictionary<string, int>();
-        //Dictionary<string, List<Tuple<string, int, int, int>>> Result = new Dictionary<string, List<Tuple<string, int, int, int>>>();
-        //Dictionary<string, List<Tuple<string, int, int, int>>> Result2 = new Dictionary<string, List<Tuple<string, int, int, int>>>();
         private void resultCalcBtn_Click(object sender, EventArgs e)
         {
             is_Calc = true;
             statNames = new Dictionary<string, List<string>[]>();
             schoolNames = new Dictionary<string, string>();
-            schools = new Dictionary<string, int>();
+            schools = new Dictionary<string, int>();         
+            Dictionary<string, string> schoolCodes = new Dictionary<string, string>();
+            
+            for (int i = 0; i < statGrid.Rows.Count - 1; i++)
+            {
+                string schoolCode = "";
+                schoolCode = statGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
+                if (schoolCode == "") continue;
+                schools[schoolCode] = 0;
+                statNames[schoolCode] = new List<string>[5];
+                for (int j = 0; j < 5; j++) 
+                {
+                    statNames[schoolCode][j] = new List<string>();
+                }
+                string schoolName = statGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
+                schoolNames[schoolCode] = schoolName;
+                schoolCodes[schoolName] = schoolCode;
+            }
+            if (statImpType)
+            {
+                for (int i = 0; i < statFullGrid.Rows.Count - 1; i++)
+                {
+                    string schoolCode = statFullGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
+                    if (schoolCode == "") continue;
+                    string name = statFullGrid.Rows[i].Cells[2].Value?.ToString() ?? "";
+                    if (name == "") continue;
+                    int jobType = JobType(statFullGrid.Rows[i].Cells[3].Value?.ToString() ?? "");
+                    if (jobType != -1) statNames[schoolCode][jobType].Add(name);
+                }
+            }
+
+            /*for (int i = 0; i < needGrid.Rows.Count - 1; i++)
+            {
+                string schoolCode = "";
+                schoolCode = needGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
+                if (schoolCode == "") continue;
+                schools[schoolCode] = 0;
+                string schoolName = needGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
+                schoolNames[schoolCode] = schoolName;
+            }*/
+
+            int count = 0;
+            List<string> lSchools = new List<string>(), lNameSchools = new List<string>();
+            foreach (KeyValuePair<string, int> pair in schools)
+            {
+                lSchools.Add(pair.Key);
+                lNameSchools.Add(schoolNames[pair.Key]);
+                schools[pair.Key] = count++;
+            }
 
             var statSchool = new Dictionary<string, int[]>();
             int[] lacks = new int[5];
@@ -319,34 +432,9 @@ namespace Arrangement
                     }
                 }
                 string schoolCode = "";
-                /*var cell = statGrid.Rows[i].Cells[0];
-                if (cell is not null)
-                { 
-                    schoolCode = cell.Value.ToString();
-                }*/
                 schoolCode = statGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
                 if (schoolCode == "") continue;
-                statNames[schoolCode] = new List<string>[5];
-                for (int j = 0; j < 5; j++)
-                {
-                    statNames[schoolCode][j] = new List<string>();
-                }
                 statSchool[schoolCode] = arr2;
-                schools[schoolCode] = 0;
-                string schoolName = statGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
-                schoolNames[schoolCode] = schoolName;
-            }
-            if (statImpType)
-            {
-                for (int i = 0; i < statFullGrid.Rows.Count - 1; i++)
-                {
-                    string schoolCode = statFullGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
-                    if (schoolCode == "") continue;
-                    string name = statFullGrid.Rows[i].Cells[2].Value?.ToString() ?? "";
-                    if (name == "") continue;
-                    int jobType = JobType(statFullGrid.Rows[i].Cells[3].Value?.ToString() ?? "");
-                    if (jobType != -1) statNames[schoolCode][jobType].Add(name);
-                }
             }
 
             foreach (var school in statSchool)
@@ -358,6 +446,7 @@ namespace Arrangement
             }
 
             Dictionary<string, int[]> needSchool = new Dictionary<string, int[]>();
+            Dictionary<string, string> needCodes = new Dictionary<string, string>();
             for (int i = 0; i < needGrid.Rows.Count - 1; i++)
             {
                 int[] arr2 = new int[5];
@@ -374,27 +463,15 @@ namespace Arrangement
                     }
                 }
                 string schoolCode = "";
-                /*var cell = needGrid.Rows[i].Cells[0];
-                if (cell is not null)
-                { 
-                    schoolCode = cell.Value.ToString();
-                }*/
                 schoolCode = needGrid.Rows[i].Cells[0].Value?.ToString() ?? "";
                 if (schoolCode == "") continue;
-
-                needSchool[schoolCode] = arr2;
-                schools[schoolCode] = 0;
                 string schoolName = needGrid.Rows[i].Cells[1].Value?.ToString() ?? "";
-                schoolNames[schoolCode] = schoolName;
-            }
+                if (!schoolCodes.ContainsKey(schoolName)) continue;
+                string statCode = schoolCodes[schoolName];
 
-            int count = 0;
-            List<string> lSchools = new List<string>(), lNameSchools = new List<string>();
-            foreach (KeyValuePair<string, int> pair in schools)
-            {
-                lSchools.Add(pair.Key);
-                lNameSchools.Add(schoolNames[pair.Key]);
-                schools[pair.Key] = count++;
+                needCodes[statCode] = schoolCode;
+                schoolCode = statCode;
+                needSchool[schoolCode] = arr2;
             }
 
             List<Tuple<int, int>>[] needList = new List<Tuple<int, int>>[5];
@@ -423,19 +500,6 @@ namespace Arrangement
                 }
             }
 
-            List<Tuple<int, int>>[] queue = new List<Tuple<int, int>>[5];
-            for (int j = 0; j < 5; j++)
-            {
-                queue[j] = new List<Tuple<int, int>>();
-                foreach (KeyValuePair<string, int[]> pair in statSchool)
-                {
-                    queue[j].Add(new Tuple<int, int>(schools[pair.Key], pair.Value[j]));
-                }
-                queue[j].Shuffle();
-                queue[j].Shuffle();
-            }
-
-            //int[][][] result = new int[schools.Count][][];
             result = new int[schools.Count][][];
             for (int i = 0; i < schools.Count; i++)
             {
@@ -446,6 +510,106 @@ namespace Arrangement
                 }
             }
 
+            bool[][] match = new bool[lSchools.Count][];
+            for (int i = 0; i < lSchools.Count; i++)
+            {
+                match[i] = new bool[lSchools.Count];
+                for (int j = 0; j < lSchools.Count; j++) match[i][j] = false;
+            }
+            foreach (KeyValuePair<string, int[]> pair in needSchool)
+            {
+                int g = schools[pair.Key];
+                int[] arr2 = new int[5];
+                for (int j = 0; j < 5; j++)
+                {
+                    arr2[j] = pair.Value[j];
+                    pair.Value[j] -= Lacks[j][g];
+                }
+                List<Tuple<int, int>> queue = new List<Tuple<int, int>>();
+                foreach (KeyValuePair<string, int[]> pair2 in statSchool)
+                {
+                    int l = schools[pair2.Key];
+                    if (l == g || match[g][l])
+                    {
+                        continue;
+                    }
+                    int sum = 0;
+                    for (int j = 0; j < 5; j++)
+                    {
+                        sum += pair2.Value[j];
+                    }
+                    queue.Add(new Tuple<int, int>(sum, l));
+
+                }
+                queue.Sort(); queue.Reverse();
+                int[] arr3 = new int[5];
+                int k = 0;
+                List<int>[] tmp = new List<int>[5], tmp2 = new List<int>[5];
+                for (int j = 0; j < 5; j++)
+                {
+                    tmp[j] = new List<int>();
+                    tmp2[j] = new List<int>();
+                }
+                for (; k < queue.Count; k++)
+                {
+                    bool chkEmpty = true;
+                    for (int j = 0; j < 5 && chkEmpty; j++) chkEmpty = (arr3[j] >= pair.Value[j]);
+                    if (chkEmpty && k >= 6) break;
+                    (int y, int i) = queue[k];
+                    int[] arr = statSchool[lSchools[i]];
+                    for (int j = 0; j < 5; j++)
+                    {
+                        tmp2[j].Add(Math.Min(arr[j], j == 3 ? arr2[j] / 2: arr2[j]));
+                        arr3[j] += tmp2[j][k];
+                    }
+                }
+                for (int k2 = 0; k2 < k; k2++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        tmp[j].Add(arr3[j] == 0 ? 0: (int)(Convert.ToDouble(pair.Value[j]) / Convert.ToDouble(arr3[j]) * Convert.ToDouble(tmp2[j][k2])));
+                        arr2[j] -= tmp[j][k2];
+                    }
+                }
+                for (int j = 0; j < 5; j++)
+                {
+                    for (int k2 = 0; k2 < k && arr2[j] > 0; k2++)
+                    {
+                        while (arr2[j] > 0 && tmp[j][k2] < tmp2[j][k2])
+                        {
+                            tmp[j][k2]++;
+                            arr2[j]--;
+                        } 
+                    }
+                }
+                for (int k2 = 0; k2 < k; k2++) 
+                {
+                    int sum = 0;
+                    (int y, int i) = queue[k2];
+                    int[] arr = statSchool[lSchools[i]];
+                    for (int j = 0; j < 5; j++)
+                    {
+                        pair.Value[j] -= tmp[j][k2];
+                        arr[j] -= tmp[j][k2];
+                        result[i][g][j] += tmp[j][k2];
+                        sum += tmp[j][k2];
+                    }
+                    statSchool[lSchools[i]] = arr;
+                    match[i][g] = (sum > 0);
+                }
+            }
+
+            /*List<Tuple<int, int>>[] queue = new List<Tuple<int, int>>[5];
+            for (int j = 0; j < 5; j++)
+            {
+                queue[j] = new List<Tuple<int, int>>();
+                foreach (KeyValuePair<string, int[]> pair in statSchool)
+                {
+                    queue[j].Add(new Tuple<int, int>(schools[pair.Key], pair.Value[j]));
+                }
+                queue[j].Shuffle();
+                queue[j].Shuffle();
+            }
             count = 0;
             foreach (KeyValuePair<string, int[]> pair in needSchool)
             {
@@ -468,7 +632,7 @@ namespace Arrangement
                     }
                 }
                 count++;
-            }
+            }*/
 
             /*resultGrid.Rows.Clear();
             resultGrid.Columns.Clear();
@@ -552,7 +716,7 @@ namespace Arrangement
                     for (int k = 0; k < 5; k++) sum += result[i][j][k];
                     if (sum == 0) continue;
                     resultGrid2.Rows.Add();
-                    resultGrid2.Rows[count].Cells[0].Value = lSchools[j];
+                    resultGrid2.Rows[count].Cells[0].Value = needCodes[lSchools[j]];
                     resultGrid2.Rows[count].Cells[1].Value = lNameSchools[j];
                     resultGrid2.Rows[count].Cells[2].Value = 1 + gr_cnt;
                     resultGrid2.Rows[count].Cells[3].Value = lNameSchools[i];
@@ -590,7 +754,7 @@ namespace Arrangement
         {
             statImpPath = showExcelDialog("DS đề xuất theo đơn vị");
             statImpType = true;
-            statImpName.Text = "Chưa có file nào được chọn";
+            //statImpName.Text = "Chưa có file nào được chọn";
             statImpName2.Text = (statImpPath == "" ? "Chưa có file nào được chọn" : compressPath(statImpPath));
         }
 
@@ -610,11 +774,13 @@ namespace Arrangement
             {
                 return;
             }
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = false;
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);                
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-            app.Visible = true;                
 
 
             void addSheet(DataGridView grid, string path, string sheetName, string title)
@@ -644,6 +810,10 @@ namespace Arrangement
                         worksheet.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
                     }
                 }
+                for (int i = 1; i < grid.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[1, i].EntireColumn.AutoFit();
+                }
             }            
             
             addSheet(resultGrid2, allExpPath, "Sheet1", "DS phân công theo điểm thi");
@@ -654,6 +824,9 @@ namespace Arrangement
 
             workbook.SaveAs(allExpPath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             app.Quit();
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -736,11 +909,13 @@ namespace Arrangement
             {
                 return;
             }
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = false;
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-            app.Visible = true;
 
 
             void addSheet(DataGridView grid, string path, string sheetName, string title)
@@ -770,6 +945,10 @@ namespace Arrangement
                         worksheet.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
                     }
                 }
+                for (int i = 1; i < grid.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[1, i].EntireColumn.AutoFit();
+                }
             }
 
             addSheet(statFullGrid, allExpPath, "Sheet1", "DS đề xuất đầy đủ");
@@ -777,6 +956,9 @@ namespace Arrangement
 
             workbook.SaveAs(allExpPath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             app.Quit();
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         void copySampleFile(string title, string fileName)
