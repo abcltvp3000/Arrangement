@@ -850,6 +850,7 @@ namespace Arrangement
 
         private void resultExpBtn2_Click_1(object sender, EventArgs e)
         {
+
             expExcel(statGrid, "DS phân công theo điểm thi");
         }
     }
