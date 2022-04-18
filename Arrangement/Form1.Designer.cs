@@ -569,6 +569,7 @@
             this.resultExpBtn.TabIndex = 21;
             this.resultExpBtn.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn.UseVisualStyleBackColor = true;
+            this.resultExpBtn.Click += new System.EventHandler(this.resultExpBtn_Click_1);
             // 
             // resultGrid
             // 

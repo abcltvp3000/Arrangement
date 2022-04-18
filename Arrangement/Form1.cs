@@ -674,6 +674,7 @@ namespace Arrangement
 
         private void statTabCtrl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            expExcel(statGrid, "DS phân công theo đơn vị");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -839,6 +840,11 @@ namespace Arrangement
         }
 
         private void statImpName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resultExpBtn_Click_1(object sender, EventArgs e)
         {
 
         }
