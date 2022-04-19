@@ -169,9 +169,9 @@
             // needExpBtn
             // 
             this.needExpBtn.AutoSize = true;
-            this.needExpBtn.Location = new System.Drawing.Point(502, 3);
+            this.needExpBtn.Location = new System.Drawing.Point(477, 0);
             this.needExpBtn.Name = "needExpBtn";
-            this.needExpBtn.Size = new System.Drawing.Size(143, 25);
+            this.needExpBtn.Size = new System.Drawing.Size(168, 26);
             this.needExpBtn.TabIndex = 12;
             this.needExpBtn.Text = "Xuất dữ liệu ra file Excel";
             this.needExpBtn.UseVisualStyleBackColor = true;
@@ -211,9 +211,6 @@
             // needGrid
             // 
             this.needGrid.AllowUserToOrderColumns = true;
-            this.needGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.needGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.needGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.needGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -225,52 +222,60 @@
             this.needT2,
             this.needT3,
             this.needT4});
-            this.needGrid.Location = new System.Drawing.Point(0, 32);
+            this.needGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.needGrid.Location = new System.Drawing.Point(3, 21);
             this.needGrid.Name = "needGrid";
             this.needGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.needGrid.RowTemplate.Height = 25;
-            this.needGrid.Size = new System.Drawing.Size(645, 181);
+            this.needGrid.Size = new System.Drawing.Size(639, 195);
             this.needGrid.TabIndex = 8;
             // 
             // needSchoolCode
             // 
             this.needSchoolCode.HeaderText = "Mã điểm thi";
+            this.needSchoolCode.MinimumWidth = 8;
             this.needSchoolCode.Name = "needSchoolCode";
             // 
             // needSchoolName
             // 
             this.needSchoolName.HeaderText = "Tên điểm thi";
+            this.needSchoolName.MinimumWidth = 8;
             this.needSchoolName.Name = "needSchoolName";
             // 
             // needT0
             // 
             this.needT0.HeaderText = "TĐ";
+            this.needT0.MinimumWidth = 8;
             this.needT0.Name = "needT0";
             // 
             // needT1
             // 
             this.needT1.HeaderText = "PTĐ";
+            this.needT1.MinimumWidth = 8;
             this.needT1.Name = "needT1";
             // 
             // needT2
             // 
             this.needT2.HeaderText = "TK";
+            this.needT2.MinimumWidth = 8;
             this.needT2.Name = "needT2";
             // 
             // needT3
             // 
             this.needT3.HeaderText = "CBCT";
+            this.needT3.MinimumWidth = 8;
             this.needT3.Name = "needT3";
             // 
             // needT4
             // 
             this.needT4.HeaderText = "CBGS";
+            this.needT4.MinimumWidth = 8;
             this.needT4.Name = "needT4";
             // 
             // resultCalcBtn
             // 
             this.resultCalcBtn.AutoSize = true;
-            this.resultCalcBtn.Location = new System.Drawing.Point(15, 500);
+            this.resultCalcBtn.Location = new System.Drawing.Point(15, 448);
             this.resultCalcBtn.Name = "resultCalcBtn";
             this.resultCalcBtn.Size = new System.Drawing.Size(89, 25);
             this.resultCalcBtn.TabIndex = 18;
@@ -282,7 +287,7 @@
             // 
             this.resultHead.AutoSize = true;
             this.resultHead.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.resultHead.Location = new System.Drawing.Point(12, 422);
+            this.resultHead.Location = new System.Drawing.Point(12, 396);
             this.resultHead.Name = "resultHead";
             this.resultHead.Size = new System.Drawing.Size(217, 30);
             this.resultHead.TabIndex = 14;
@@ -291,9 +296,9 @@
             // delNeedGrid
             // 
             this.delNeedGrid.AutoSize = true;
-            this.delNeedGrid.Location = new System.Drawing.Point(406, 3);
+            this.delNeedGrid.Location = new System.Drawing.Point(359, 0);
             this.delNeedGrid.Name = "delNeedGrid";
-            this.delNeedGrid.Size = new System.Drawing.Size(90, 25);
+            this.delNeedGrid.Size = new System.Drawing.Size(112, 26);
             this.delNeedGrid.TabIndex = 27;
             this.delNeedGrid.Text = "Xóa dữ liệu";
             this.delNeedGrid.UseVisualStyleBackColor = true;
@@ -322,7 +327,7 @@
             // allExpBtn
             // 
             this.allExpBtn.AutoSize = true;
-            this.allExpBtn.Location = new System.Drawing.Point(15, 562);
+            this.allExpBtn.Location = new System.Drawing.Point(15, 510);
             this.allExpBtn.Name = "allExpBtn";
             this.allExpBtn.Size = new System.Drawing.Size(143, 25);
             this.allExpBtn.TabIndex = 28;
@@ -334,7 +339,7 @@
             // 
             this.statTabCtrl.Controls.Add(this.statList);
             this.statTabCtrl.Controls.Add(this.statFullList);
-            this.statTabCtrl.Location = new System.Drawing.Point(12, 155);
+            this.statTabCtrl.Location = new System.Drawing.Point(12, 138);
             this.statTabCtrl.Name = "statTabCtrl";
             this.statTabCtrl.SelectedIndex = 0;
             this.statTabCtrl.Size = new System.Drawing.Size(648, 247);
@@ -347,7 +352,7 @@
             this.statList.Controls.Add(this.statExpBtn);
             this.statList.Location = new System.Drawing.Point(4, 24);
             this.statList.Name = "statList";
-            this.statList.Padding = new System.Windows.Forms.Padding(3);
+            this.statList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.statList.Size = new System.Drawing.Size(640, 219);
             this.statList.TabIndex = 0;
             this.statList.Text = "Danh sách thống kê";
@@ -356,9 +361,6 @@
             // statGrid
             // 
             this.statGrid.AllowUserToOrderColumns = true;
-            this.statGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.statGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.statGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.statGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -370,54 +372,62 @@
             this.numT2,
             this.numT3,
             this.numT4});
-            this.statGrid.Location = new System.Drawing.Point(0, 32);
+            this.statGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.statGrid.Location = new System.Drawing.Point(3, 21);
             this.statGrid.Name = "statGrid";
             this.statGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.statGrid.RowTemplate.Height = 25;
-            this.statGrid.Size = new System.Drawing.Size(640, 181);
+            this.statGrid.Size = new System.Drawing.Size(634, 195);
             this.statGrid.TabIndex = 2;
             // 
             // statSchoolCode
             // 
             this.statSchoolCode.HeaderText = "Mã đơn vị";
+            this.statSchoolCode.MinimumWidth = 8;
             this.statSchoolCode.Name = "statSchoolCode";
             // 
             // nameSchool
             // 
             this.nameSchool.HeaderText = "Tên đơn vị";
+            this.nameSchool.MinimumWidth = 8;
             this.nameSchool.Name = "nameSchool";
             // 
             // numT0
             // 
             this.numT0.HeaderText = "TĐ";
+            this.numT0.MinimumWidth = 8;
             this.numT0.Name = "numT0";
             // 
             // numT1
             // 
             this.numT1.HeaderText = "PTĐ";
+            this.numT1.MinimumWidth = 8;
             this.numT1.Name = "numT1";
             // 
             // numT2
             // 
             this.numT2.HeaderText = "TK";
+            this.numT2.MinimumWidth = 8;
             this.numT2.Name = "numT2";
             // 
             // numT3
             // 
             this.numT3.HeaderText = "CBCT";
+            this.numT3.MinimumWidth = 8;
             this.numT3.Name = "numT3";
             // 
             // numT4
             // 
             this.numT4.HeaderText = "CBGS";
+            this.numT4.MinimumWidth = 8;
             this.numT4.Name = "numT4";
             // 
             // delGrid
             // 
             this.delGrid.AutoSize = true;
-            this.delGrid.Location = new System.Drawing.Point(402, 3);
+            this.delGrid.Location = new System.Drawing.Point(356, 0);
             this.delGrid.Name = "delGrid";
-            this.delGrid.Size = new System.Drawing.Size(89, 25);
+            this.delGrid.Size = new System.Drawing.Size(112, 25);
             this.delGrid.TabIndex = 26;
             this.delGrid.Text = "Xóa dữ liệu";
             this.delGrid.UseVisualStyleBackColor = true;
@@ -426,9 +436,9 @@
             // statExpBtn
             // 
             this.statExpBtn.AutoSize = true;
-            this.statExpBtn.Location = new System.Drawing.Point(497, 3);
+            this.statExpBtn.Location = new System.Drawing.Point(473, 0);
             this.statExpBtn.Name = "statExpBtn";
-            this.statExpBtn.Size = new System.Drawing.Size(143, 25);
+            this.statExpBtn.Size = new System.Drawing.Size(167, 25);
             this.statExpBtn.TabIndex = 5;
             this.statExpBtn.Text = "Xuất dữ liệu ra file Excel";
             this.statExpBtn.UseVisualStyleBackColor = true;
@@ -441,7 +451,7 @@
             this.statFullList.Controls.Add(this.statFullExpBtn);
             this.statFullList.Location = new System.Drawing.Point(4, 24);
             this.statFullList.Name = "statFullList";
-            this.statFullList.Padding = new System.Windows.Forms.Padding(3);
+            this.statFullList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.statFullList.Size = new System.Drawing.Size(640, 219);
             this.statFullList.TabIndex = 1;
             this.statFullList.Text = "Danh sách đầy đủ";
@@ -471,21 +481,25 @@
             // statFullSchoolCode
             // 
             this.statFullSchoolCode.HeaderText = "Mã đơn vị";
+            this.statFullSchoolCode.MinimumWidth = 8;
             this.statFullSchoolCode.Name = "statFullSchoolCode";
             // 
             // statFullSchool
             // 
             this.statFullSchool.HeaderText = "Tên đơn vị";
+            this.statFullSchool.MinimumWidth = 8;
             this.statFullSchool.Name = "statFullSchool";
             // 
             // statFullName
             // 
             this.statFullName.HeaderText = "Họ và tên";
+            this.statFullName.MinimumWidth = 8;
             this.statFullName.Name = "statFullName";
             // 
             // statFullJob
             // 
             this.statFullJob.HeaderText = "Chức vụ";
+            this.statFullJob.MinimumWidth = 8;
             this.statFullJob.Name = "statFullJob";
             // 
             // statFullDelBtn
@@ -493,7 +507,7 @@
             this.statFullDelBtn.AutoSize = true;
             this.statFullDelBtn.Location = new System.Drawing.Point(402, 3);
             this.statFullDelBtn.Name = "statFullDelBtn";
-            this.statFullDelBtn.Size = new System.Drawing.Size(89, 25);
+            this.statFullDelBtn.Size = new System.Drawing.Size(112, 35);
             this.statFullDelBtn.TabIndex = 29;
             this.statFullDelBtn.Text = "Xóa dữ liệu";
             this.statFullDelBtn.UseVisualStyleBackColor = true;
@@ -504,7 +518,7 @@
             this.statFullExpBtn.AutoSize = true;
             this.statFullExpBtn.Location = new System.Drawing.Point(497, 3);
             this.statFullExpBtn.Name = "statFullExpBtn";
-            this.statFullExpBtn.Size = new System.Drawing.Size(143, 25);
+            this.statFullExpBtn.Size = new System.Drawing.Size(208, 35);
             this.statFullExpBtn.TabIndex = 28;
             this.statFullExpBtn.Text = "Xuất dữ liệu ra file Excel";
             this.statFullExpBtn.UseVisualStyleBackColor = true;
@@ -514,7 +528,7 @@
             // 
             this.resTabCtrl.Controls.Add(this.resTab);
             this.resTabCtrl.Controls.Add(this.resTab2);
-            this.resTabCtrl.Location = new System.Drawing.Point(257, 422);
+            this.resTabCtrl.Location = new System.Drawing.Point(257, 396);
             this.resTabCtrl.Name = "resTabCtrl";
             this.resTabCtrl.SelectedIndex = 0;
             this.resTabCtrl.Size = new System.Drawing.Size(1058, 270);
@@ -526,7 +540,7 @@
             this.resTab.Controls.Add(this.resultGrid);
             this.resTab.Location = new System.Drawing.Point(4, 24);
             this.resTab.Name = "resTab";
-            this.resTab.Padding = new System.Windows.Forms.Padding(3);
+            this.resTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.resTab.Size = new System.Drawing.Size(1050, 242);
             this.resTab.TabIndex = 0;
             this.resTab.Text = "Theo đơn vị";
@@ -535,9 +549,9 @@
             // resultExpBtn
             // 
             this.resultExpBtn.AutoSize = true;
-            this.resultExpBtn.Location = new System.Drawing.Point(905, 3);
+            this.resultExpBtn.Location = new System.Drawing.Point(882, 0);
             this.resultExpBtn.Name = "resultExpBtn";
-            this.resultExpBtn.Size = new System.Drawing.Size(145, 25);
+            this.resultExpBtn.Size = new System.Drawing.Size(167, 28);
             this.resultExpBtn.TabIndex = 21;
             this.resultExpBtn.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn.UseVisualStyleBackColor = true;
@@ -548,9 +562,6 @@
             this.resultGrid.AllowUserToAddRows = false;
             this.resultGrid.AllowUserToDeleteRows = false;
             this.resultGrid.AllowUserToOrderColumns = true;
-            this.resultGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.resultGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resultGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.resultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -564,65 +575,75 @@
             this.resT2,
             this.resT3,
             this.resT4});
-            this.resultGrid.Location = new System.Drawing.Point(0, 32);
+            this.resultGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.resultGrid.Location = new System.Drawing.Point(3, 29);
             this.resultGrid.Name = "resultGrid";
             this.resultGrid.ReadOnly = true;
             this.resultGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.resultGrid.RowTemplate.Height = 25;
-            this.resultGrid.Size = new System.Drawing.Size(1050, 210);
+            this.resultGrid.Size = new System.Drawing.Size(1044, 210);
             this.resultGrid.TabIndex = 20;
             // 
             // resSchoolCode
             // 
             this.resSchoolCode.HeaderText = "Mã đơn vị";
+            this.resSchoolCode.MinimumWidth = 8;
             this.resSchoolCode.Name = "resSchoolCode";
             this.resSchoolCode.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "Tên đơn vị";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // resGroup
             // 
             this.resGroup.HeaderText = "Đoàn";
+            this.resGroup.MinimumWidth = 8;
             this.resGroup.Name = "resGroup";
             this.resGroup.ReadOnly = true;
             // 
             // resSchoolName
             // 
             this.resSchoolName.HeaderText = "Coi thi tại điểm thi";
+            this.resSchoolName.MinimumWidth = 8;
             this.resSchoolName.Name = "resSchoolName";
             this.resSchoolName.ReadOnly = true;
             // 
             // resT0
             // 
             this.resT0.HeaderText = "TĐ";
+            this.resT0.MinimumWidth = 8;
             this.resT0.Name = "resT0";
             this.resT0.ReadOnly = true;
             // 
             // resT1
             // 
             this.resT1.HeaderText = "PTĐ";
+            this.resT1.MinimumWidth = 8;
             this.resT1.Name = "resT1";
             this.resT1.ReadOnly = true;
             // 
             // resT2
             // 
             this.resT2.HeaderText = "TK";
+            this.resT2.MinimumWidth = 8;
             this.resT2.Name = "resT2";
             this.resT2.ReadOnly = true;
             // 
             // resT3
             // 
             this.resT3.HeaderText = "CBCT";
+            this.resT3.MinimumWidth = 8;
             this.resT3.Name = "resT3";
             this.resT3.ReadOnly = true;
             // 
             // resT4
             // 
             this.resT4.HeaderText = "CBGS";
+            this.resT4.MinimumWidth = 8;
             this.resT4.Name = "resT4";
             this.resT4.ReadOnly = true;
             // 
@@ -632,7 +653,7 @@
             this.resTab2.Controls.Add(this.resultGrid2);
             this.resTab2.Location = new System.Drawing.Point(4, 24);
             this.resTab2.Name = "resTab2";
-            this.resTab2.Padding = new System.Windows.Forms.Padding(3);
+            this.resTab2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.resTab2.Size = new System.Drawing.Size(1050, 242);
             this.resTab2.TabIndex = 1;
             this.resTab2.Text = "Theo điểm thi";
@@ -641,9 +662,9 @@
             // resultExpBtn2
             // 
             this.resultExpBtn2.AutoSize = true;
-            this.resultExpBtn2.Location = new System.Drawing.Point(905, 3);
+            this.resultExpBtn2.Location = new System.Drawing.Point(882, 0);
             this.resultExpBtn2.Name = "resultExpBtn2";
-            this.resultExpBtn2.Size = new System.Drawing.Size(145, 25);
+            this.resultExpBtn2.Size = new System.Drawing.Size(168, 25);
             this.resultExpBtn2.TabIndex = 36;
             this.resultExpBtn2.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn2.UseVisualStyleBackColor = true;
@@ -654,9 +675,6 @@
             this.resultGrid2.AllowUserToAddRows = false;
             this.resultGrid2.AllowUserToDeleteRows = false;
             this.resultGrid2.AllowUserToOrderColumns = true;
-            this.resultGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.resultGrid2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resultGrid2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.resultGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -670,72 +688,82 @@
             this.res2T2,
             this.res2T3,
             this.res2T4});
-            this.resultGrid2.Location = new System.Drawing.Point(0, 34);
+            this.resultGrid2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.resultGrid2.Location = new System.Drawing.Point(3, 26);
             this.resultGrid2.Name = "resultGrid2";
             this.resultGrid2.ReadOnly = true;
             this.resultGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.resultGrid2.RowTemplate.Height = 25;
-            this.resultGrid2.Size = new System.Drawing.Size(1050, 208);
+            this.resultGrid2.Size = new System.Drawing.Size(1044, 213);
             this.resultGrid2.TabIndex = 35;
             // 
             // resSchoolCode2
             // 
             this.resSchoolCode2.HeaderText = "Mã điểm thi";
+            this.resSchoolCode2.MinimumWidth = 8;
             this.resSchoolCode2.Name = "resSchoolCode2";
             this.resSchoolCode2.ReadOnly = true;
             // 
             // resSchool2
             // 
             this.resSchool2.HeaderText = "Tên điểm thi";
+            this.resSchool2.MinimumWidth = 8;
             this.resSchool2.Name = "resSchool2";
             this.resSchool2.ReadOnly = true;
             // 
             // resGroup2
             // 
             this.resGroup2.HeaderText = "Đoàn";
+            this.resGroup2.MinimumWidth = 8;
             this.resGroup2.Name = "resGroup2";
             this.resGroup2.ReadOnly = true;
             // 
             // resSchoolName2
             // 
             this.resSchoolName2.HeaderText = "Coi thi bởi đơn vị";
+            this.resSchoolName2.MinimumWidth = 8;
             this.resSchoolName2.Name = "resSchoolName2";
             this.resSchoolName2.ReadOnly = true;
             // 
             // res2T0
             // 
             this.res2T0.HeaderText = "TĐ";
+            this.res2T0.MinimumWidth = 8;
             this.res2T0.Name = "res2T0";
             this.res2T0.ReadOnly = true;
             // 
             // res2T1
             // 
             this.res2T1.HeaderText = "PTĐ";
+            this.res2T1.MinimumWidth = 8;
             this.res2T1.Name = "res2T1";
             this.res2T1.ReadOnly = true;
             // 
             // res2T2
             // 
             this.res2T2.HeaderText = "TK";
+            this.res2T2.MinimumWidth = 8;
             this.res2T2.Name = "res2T2";
             this.res2T2.ReadOnly = true;
             // 
             // res2T3
             // 
             this.res2T3.HeaderText = "CBCT";
+            this.res2T3.MinimumWidth = 8;
             this.res2T3.Name = "res2T3";
             this.res2T3.ReadOnly = true;
             // 
             // res2T4
             // 
             this.res2T4.HeaderText = "CBGS";
+            this.res2T4.MinimumWidth = 8;
             this.res2T4.Name = "res2T4";
             this.res2T4.ReadOnly = true;
             // 
             // needTabCtrl
             // 
             this.needTabCtrl.Controls.Add(this.needTab);
-            this.needTabCtrl.Location = new System.Drawing.Point(662, 155);
+            this.needTabCtrl.Location = new System.Drawing.Point(662, 138);
             this.needTabCtrl.Name = "needTabCtrl";
             this.needTabCtrl.SelectedIndex = 0;
             this.needTabCtrl.Size = new System.Drawing.Size(653, 247);
@@ -748,7 +776,7 @@
             this.needTab.Controls.Add(this.needExpBtn);
             this.needTab.Location = new System.Drawing.Point(4, 24);
             this.needTab.Name = "needTab";
-            this.needTab.Padding = new System.Windows.Forms.Padding(3);
+            this.needTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.needTab.Size = new System.Drawing.Size(645, 219);
             this.needTab.TabIndex = 0;
             this.needTab.Text = "Danh sách thống kê";
@@ -757,9 +785,9 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(15, 531);
+            this.button2.Location = new System.Drawing.Point(15, 479);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(225, 25);
+            this.button2.Size = new System.Drawing.Size(228, 25);
             this.button2.TabIndex = 40;
             this.button2.Text = "Xem danh sách phân công ngẫu nhiên";
             this.button2.UseVisualStyleBackColor = true;
@@ -790,9 +818,9 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(516, 148);
+            this.button1.Location = new System.Drawing.Point(514, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 25);
+            this.button1.Size = new System.Drawing.Size(146, 25);
             this.button1.TabIndex = 27;
             this.button1.Text = "Xóa dữ liệu cả hai bảng";
             this.button1.UseVisualStyleBackColor = true;
@@ -804,7 +832,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1324, 724);
+            this.ClientSize = new System.Drawing.Size(959, 449);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.needSampleBtn);
             this.Controls.Add(this.statSampleBtn);
