@@ -361,6 +361,9 @@ namespace Arrangement
         Dictionary<string, int> schools = new Dictionary<string, int>();
         private void resultCalcBtn_Click(object sender, EventArgs e)
         {
+            Form3 fr3 = new Form3();
+            fr3.label1.Text = "Đang xử lý...";
+            fr3.Show();
             is_Calc = true;
             statNames = new Dictionary<string, List<string>[]>();
             schoolNames = new Dictionary<string, string>();
@@ -525,7 +528,8 @@ namespace Arrangement
                     arr2[j] = pair.Value[j];
                     pair.Value[j] -= Lacks[j][g];
                 }
-                List<Tuple<int, int>> queue = new List<Tuple<int, int>>();
+                const int X = 4;
+                List<Tuple<int, int, int, int, int>> queue = new List<Tuple<int, int, int, int, int>>();
                 foreach (KeyValuePair<string, int[]> pair2 in statSchool)
                 {
                     int l = schools[pair2.Key];
@@ -533,13 +537,21 @@ namespace Arrangement
                     {
                         continue;
                     }
-                    int sum = 0;
+                    int sum = 0, mx = pair2.Value[0], mn = pair.Value[1];
                     for (int j = 0; j < 5; j++)
                     {
                         sum += pair2.Value[j];
                     }
-                    queue.Add(new Tuple<int, int>(sum, l));
-
+                    int cnt = 0, cnt2 = 0, cnt3 = 0;
+                    for (int j = 0; j < 5; j++)
+                    { 
+                        mx = Math.Max(pair2.Value[j], mx);
+                        mn = Math.Min(pair2.Value[j], mn);
+                        cnt += Convert.ToInt32(pair2.Value[j] * X >= pair.Value[j]);
+                        cnt2 += Convert.ToInt32(pair2.Value[j] * (X + 1) >= pair.Value[j]);
+                        cnt3 += Convert.ToInt32(pair2.Value[j] * (X + 2) >= pair.Value[j]);
+                    }
+                    queue.Add(new Tuple<int, int, int, int, int>(cnt, cnt2, cnt3, sum, l));
                 }
                 queue.Sort(); queue.Reverse();
                 int[] arr3 = new int[5];
@@ -554,8 +566,8 @@ namespace Arrangement
                 {
                     bool chkEmpty = true;
                     for (int j = 0; j < 5 && chkEmpty; j++) chkEmpty = (arr3[j] >= pair.Value[j]);
-                    if (chkEmpty && k >= 6) break;
-                    (int y, int i) = queue[k];
+                    if (chkEmpty && k >= X) break;
+                    (int Y, int YY, int YYY, int YYYY, int i) = queue[k];
                     int[] arr = statSchool[lSchools[i]];
                     for (int j = 0; j < 5; j++)
                     {
@@ -567,7 +579,11 @@ namespace Arrangement
                 {
                     for (int j = 0; j < 5; j++)
                     {
-                        tmp[j].Add(arr3[j] == 0 ? 0: (int)(Convert.ToDouble(pair.Value[j]) / Convert.ToDouble(arr3[j]) * Convert.ToDouble(tmp2[j][k2])));
+                        tmp[j].Add(Math.Min(arr2[j], arr3[j] == 0 ? 0: (int)(Convert.ToDouble(pair.Value[j]) / Convert.ToDouble(arr3[j]) * Convert.ToDouble(tmp2[j][k2]))));
+                        if (tmp[j][k2] + 10 >= tmp2[j][k2])
+                        {
+                            tmp[j][k2] = Math.Min(tmp2[j][k2], arr2[j]);
+                        }
                         arr2[j] -= tmp[j][k2];
                     }
                 }
@@ -579,13 +595,13 @@ namespace Arrangement
                         {
                             tmp[j][k2]++;
                             arr2[j]--;
-                        } 
+                        }
                     }
                 }
                 for (int k2 = 0; k2 < k; k2++) 
                 {
                     int sum = 0;
-                    (int y, int i) = queue[k2];
+                    (int Y, int YY, int YYY, int YYYY, int i) = queue[k2];
                     int[] arr = statSchool[lSchools[i]];
                     for (int j = 0; j < 5; j++)
                     {
@@ -733,6 +749,9 @@ namespace Arrangement
                     count++;
                 }
             }
+            fr3.label1.Text = "Hoàn thành!";
+            Thread.Sleep(1000);
+            fr3.Close();
         }
 
         private void resultExpBtn_Click(object sender, EventArgs e)
@@ -824,6 +843,7 @@ namespace Arrangement
 
             workbook.SaveAs(allExpPath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             app.Quit();
+
             fr3.label1.Text = "Hoàn thành!";
             Thread.Sleep(1000);
             fr3.Close();
