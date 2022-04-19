@@ -120,7 +120,11 @@ namespace Arrangement
 
         string standardStr(string str)
         {
-            str = str.Trim();
+            str = str.Trim(); 
+            while (str.IndexOf("  ") != -1) 
+            {
+                str = str.Remove(str.IndexOf("  "), 1);
+            }
             return str;
         }
 
@@ -529,7 +533,7 @@ namespace Arrangement
                     pair.Value[j] -= Lacks[j][g];
                 }
                 const int X = 4;
-                List<Tuple<int, int, int, int, int>> queue = new List<Tuple<int, int, int, int, int>>();
+                List<Tuple<int, int, int, int, int, int>> queue = new List<Tuple<int, int, int, int, int, int>>();
                 foreach (KeyValuePair<string, int[]> pair2 in statSchool)
                 {
                     int l = schools[pair2.Key];
@@ -542,7 +546,7 @@ namespace Arrangement
                     {
                         sum += pair2.Value[j];
                     }
-                    int cnt = 0, cnt2 = 0, cnt3 = 0;
+                    int cnt = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0, cnt5 = 0;
                     for (int j = 0; j < 5; j++)
                     { 
                         mx = Math.Max(pair2.Value[j], mx);
@@ -550,8 +554,10 @@ namespace Arrangement
                         cnt += Convert.ToInt32(pair2.Value[j] * X >= pair.Value[j]);
                         cnt2 += Convert.ToInt32(pair2.Value[j] * (X + 1) >= pair.Value[j]);
                         cnt3 += Convert.ToInt32(pair2.Value[j] * (X + 2) >= pair.Value[j]);
+                        cnt4 += Convert.ToInt32(pair2.Value[j] * (X + 3) >= pair.Value[j]);
+                        cnt5 += Convert.ToInt32(pair2.Value[j] * (X + 4) >= pair.Value[j]);
                     }
-                    queue.Add(new Tuple<int, int, int, int, int>(cnt, cnt2, cnt3, sum, l));
+                    queue.Add(new Tuple<int, int, int, int, int, int>(cnt, cnt2, cnt3, cnt4, cnt5, l));
                 }
                 queue.Sort(); queue.Reverse();
                 int[] arr3 = new int[5];
@@ -567,7 +573,7 @@ namespace Arrangement
                     bool chkEmpty = true;
                     for (int j = 0; j < 5 && chkEmpty; j++) chkEmpty = (arr3[j] >= pair.Value[j]);
                     if (chkEmpty && k >= X) break;
-                    (int Y, int YY, int YYY, int YYYY, int i) = queue[k];
+                    (int Y, int YY, int YYY, int YYYY, int YYYYY, int i) = queue[k];
                     int[] arr = statSchool[lSchools[i]];
                     for (int j = 0; j < 5; j++)
                     {
@@ -601,7 +607,7 @@ namespace Arrangement
                 for (int k2 = 0; k2 < k; k2++) 
                 {
                     int sum = 0;
-                    (int Y, int YY, int YYY, int YYYY, int i) = queue[k2];
+                    (int Y, int YY, int YYY, int YYYY, int YYYYY, int i) = queue[k2];
                     int[] arr = statSchool[lSchools[i]];
                     for (int j = 0; j < 5; j++)
                     {
