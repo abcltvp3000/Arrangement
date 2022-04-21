@@ -121,7 +121,7 @@
             // 
             this.statHead.AutoSize = true;
             this.statHead.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.statHead.Location = new System.Drawing.Point(12, 29);
+            this.statHead.Location = new System.Drawing.Point(12, 61);
             this.statHead.Name = "statHead";
             this.statHead.Size = new System.Drawing.Size(313, 30);
             this.statHead.TabIndex = 0;
@@ -130,7 +130,7 @@
             // statImpExcel
             // 
             this.statImpExcel.AutoSize = true;
-            this.statImpExcel.Location = new System.Drawing.Point(12, 67);
+            this.statImpExcel.Location = new System.Drawing.Point(12, 99);
             this.statImpExcel.Name = "statImpExcel";
             this.statImpExcel.Size = new System.Drawing.Size(153, 15);
             this.statImpExcel.TabIndex = 2;
@@ -139,7 +139,7 @@
             // statAcpImpBtn
             // 
             this.statAcpImpBtn.AutoSize = true;
-            this.statAcpImpBtn.Location = new System.Drawing.Point(174, 93);
+            this.statAcpImpBtn.Location = new System.Drawing.Point(174, 125);
             this.statAcpImpBtn.Name = "statAcpImpBtn";
             this.statAcpImpBtn.Size = new System.Drawing.Size(75, 25);
             this.statAcpImpBtn.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             this.needHead.AutoSize = true;
             this.needHead.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.needHead.Location = new System.Drawing.Point(662, 29);
+            this.needHead.Location = new System.Drawing.Point(662, 61);
             this.needHead.Name = "needHead";
             this.needHead.Size = new System.Drawing.Size(348, 30);
             this.needHead.TabIndex = 7;
@@ -160,7 +160,7 @@
             // needImpName
             // 
             this.needImpName.AutoSize = true;
-            this.needImpName.Location = new System.Drawing.Point(904, 67);
+            this.needImpName.Location = new System.Drawing.Point(904, 99);
             this.needImpName.Name = "needImpName";
             this.needImpName.Size = new System.Drawing.Size(153, 15);
             this.needImpName.TabIndex = 13;
@@ -169,9 +169,9 @@
             // needExpBtn
             // 
             this.needExpBtn.AutoSize = true;
-            this.needExpBtn.Location = new System.Drawing.Point(477, 0);
+            this.needExpBtn.Location = new System.Drawing.Point(470, 0);
             this.needExpBtn.Name = "needExpBtn";
-            this.needExpBtn.Size = new System.Drawing.Size(168, 26);
+            this.needExpBtn.Size = new System.Drawing.Size(167, 25);
             this.needExpBtn.TabIndex = 12;
             this.needExpBtn.Text = "Xuất dữ liệu ra file Excel";
             this.needExpBtn.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@
             // needAcpImpBtn
             // 
             this.needAcpImpBtn.AutoSize = true;
-            this.needAcpImpBtn.Location = new System.Drawing.Point(823, 93);
+            this.needAcpImpBtn.Location = new System.Drawing.Point(823, 125);
             this.needAcpImpBtn.Name = "needAcpImpBtn";
             this.needAcpImpBtn.Size = new System.Drawing.Size(75, 25);
             this.needAcpImpBtn.TabIndex = 11;
@@ -191,7 +191,7 @@
             // needImpBtn
             // 
             this.needImpBtn.AutoSize = true;
-            this.needImpBtn.Location = new System.Drawing.Point(823, 62);
+            this.needImpBtn.Location = new System.Drawing.Point(823, 94);
             this.needImpBtn.Name = "needImpBtn";
             this.needImpBtn.Size = new System.Drawing.Size(75, 25);
             this.needImpBtn.TabIndex = 10;
@@ -202,7 +202,7 @@
             // needImpExcel
             // 
             this.needImpExcel.AutoSize = true;
-            this.needImpExcel.Location = new System.Drawing.Point(662, 67);
+            this.needImpExcel.Location = new System.Drawing.Point(662, 99);
             this.needImpExcel.Name = "needImpExcel";
             this.needImpExcel.Size = new System.Drawing.Size(153, 15);
             this.needImpExcel.TabIndex = 9;
@@ -223,11 +223,11 @@
             this.needT3,
             this.needT4});
             this.needGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.needGrid.Location = new System.Drawing.Point(3, 21);
+            this.needGrid.Location = new System.Drawing.Point(3, 26);
             this.needGrid.Name = "needGrid";
             this.needGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.needGrid.RowTemplate.Height = 25;
-            this.needGrid.Size = new System.Drawing.Size(639, 195);
+            this.needGrid.Size = new System.Drawing.Size(634, 190);
             this.needGrid.TabIndex = 8;
             // 
             // needSchoolCode
@@ -275,7 +275,7 @@
             // resultCalcBtn
             // 
             this.resultCalcBtn.AutoSize = true;
-            this.resultCalcBtn.Location = new System.Drawing.Point(15, 448);
+            this.resultCalcBtn.Location = new System.Drawing.Point(15, 480);
             this.resultCalcBtn.Name = "resultCalcBtn";
             this.resultCalcBtn.Size = new System.Drawing.Size(89, 25);
             this.resultCalcBtn.TabIndex = 18;
@@ -287,7 +287,7 @@
             // 
             this.resultHead.AutoSize = true;
             this.resultHead.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.resultHead.Location = new System.Drawing.Point(12, 396);
+            this.resultHead.Location = new System.Drawing.Point(12, 428);
             this.resultHead.Name = "resultHead";
             this.resultHead.Size = new System.Drawing.Size(217, 30);
             this.resultHead.TabIndex = 14;
@@ -296,9 +296,9 @@
             // delNeedGrid
             // 
             this.delNeedGrid.AutoSize = true;
-            this.delNeedGrid.Location = new System.Drawing.Point(359, 0);
+            this.delNeedGrid.Location = new System.Drawing.Point(352, 0);
             this.delNeedGrid.Name = "delNeedGrid";
-            this.delNeedGrid.Size = new System.Drawing.Size(112, 26);
+            this.delNeedGrid.Size = new System.Drawing.Size(112, 25);
             this.delNeedGrid.TabIndex = 27;
             this.delNeedGrid.Text = "Xóa dữ liệu";
             this.delNeedGrid.UseVisualStyleBackColor = true;
@@ -307,7 +307,7 @@
             // impStatBtn2
             // 
             this.impStatBtn2.AutoSize = true;
-            this.impStatBtn2.Location = new System.Drawing.Point(174, 62);
+            this.impStatBtn2.Location = new System.Drawing.Point(174, 94);
             this.impStatBtn2.Name = "impStatBtn2";
             this.impStatBtn2.Size = new System.Drawing.Size(75, 25);
             this.impStatBtn2.TabIndex = 30;
@@ -318,7 +318,7 @@
             // statImpName2
             // 
             this.statImpName2.AutoSize = true;
-            this.statImpName2.Location = new System.Drawing.Point(255, 67);
+            this.statImpName2.Location = new System.Drawing.Point(255, 99);
             this.statImpName2.Name = "statImpName2";
             this.statImpName2.Size = new System.Drawing.Size(153, 15);
             this.statImpName2.TabIndex = 31;
@@ -327,7 +327,7 @@
             // allExpBtn
             // 
             this.allExpBtn.AutoSize = true;
-            this.allExpBtn.Location = new System.Drawing.Point(15, 510);
+            this.allExpBtn.Location = new System.Drawing.Point(15, 542);
             this.allExpBtn.Name = "allExpBtn";
             this.allExpBtn.Size = new System.Drawing.Size(143, 25);
             this.allExpBtn.TabIndex = 28;
@@ -339,7 +339,7 @@
             // 
             this.statTabCtrl.Controls.Add(this.statList);
             this.statTabCtrl.Controls.Add(this.statFullList);
-            this.statTabCtrl.Location = new System.Drawing.Point(12, 138);
+            this.statTabCtrl.Location = new System.Drawing.Point(12, 170);
             this.statTabCtrl.Name = "statTabCtrl";
             this.statTabCtrl.SelectedIndex = 0;
             this.statTabCtrl.Size = new System.Drawing.Size(648, 247);
@@ -352,7 +352,7 @@
             this.statList.Controls.Add(this.statExpBtn);
             this.statList.Location = new System.Drawing.Point(4, 24);
             this.statList.Name = "statList";
-            this.statList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.statList.Padding = new System.Windows.Forms.Padding(3);
             this.statList.Size = new System.Drawing.Size(640, 219);
             this.statList.TabIndex = 0;
             this.statList.Text = "Danh sách thống kê";
@@ -373,11 +373,11 @@
             this.numT3,
             this.numT4});
             this.statGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.statGrid.Location = new System.Drawing.Point(3, 21);
+            this.statGrid.Location = new System.Drawing.Point(3, 26);
             this.statGrid.Name = "statGrid";
             this.statGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.statGrid.RowTemplate.Height = 25;
-            this.statGrid.Size = new System.Drawing.Size(634, 195);
+            this.statGrid.Size = new System.Drawing.Size(634, 190);
             this.statGrid.TabIndex = 2;
             // 
             // statSchoolCode
@@ -425,7 +425,7 @@
             // delGrid
             // 
             this.delGrid.AutoSize = true;
-            this.delGrid.Location = new System.Drawing.Point(356, 0);
+            this.delGrid.Location = new System.Drawing.Point(352, 0);
             this.delGrid.Name = "delGrid";
             this.delGrid.Size = new System.Drawing.Size(112, 25);
             this.delGrid.TabIndex = 26;
@@ -436,7 +436,7 @@
             // statExpBtn
             // 
             this.statExpBtn.AutoSize = true;
-            this.statExpBtn.Location = new System.Drawing.Point(473, 0);
+            this.statExpBtn.Location = new System.Drawing.Point(470, 0);
             this.statExpBtn.Name = "statExpBtn";
             this.statExpBtn.Size = new System.Drawing.Size(167, 25);
             this.statExpBtn.TabIndex = 5;
@@ -451,7 +451,7 @@
             this.statFullList.Controls.Add(this.statFullExpBtn);
             this.statFullList.Location = new System.Drawing.Point(4, 24);
             this.statFullList.Name = "statFullList";
-            this.statFullList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.statFullList.Padding = new System.Windows.Forms.Padding(3);
             this.statFullList.Size = new System.Drawing.Size(640, 219);
             this.statFullList.TabIndex = 1;
             this.statFullList.Text = "Danh sách đầy đủ";
@@ -471,11 +471,11 @@
             this.statFullSchool,
             this.statFullName,
             this.statFullJob});
-            this.statFullGrid.Location = new System.Drawing.Point(0, 32);
+            this.statFullGrid.Location = new System.Drawing.Point(3, 26);
             this.statFullGrid.Name = "statFullGrid";
             this.statFullGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.statFullGrid.RowTemplate.Height = 25;
-            this.statFullGrid.Size = new System.Drawing.Size(640, 181);
+            this.statFullGrid.Size = new System.Drawing.Size(634, 190);
             this.statFullGrid.TabIndex = 27;
             // 
             // statFullSchoolCode
@@ -505,9 +505,9 @@
             // statFullDelBtn
             // 
             this.statFullDelBtn.AutoSize = true;
-            this.statFullDelBtn.Location = new System.Drawing.Point(402, 3);
+            this.statFullDelBtn.Location = new System.Drawing.Point(352, 0);
             this.statFullDelBtn.Name = "statFullDelBtn";
-            this.statFullDelBtn.Size = new System.Drawing.Size(112, 35);
+            this.statFullDelBtn.Size = new System.Drawing.Size(112, 25);
             this.statFullDelBtn.TabIndex = 29;
             this.statFullDelBtn.Text = "Xóa dữ liệu";
             this.statFullDelBtn.UseVisualStyleBackColor = true;
@@ -516,9 +516,9 @@
             // statFullExpBtn
             // 
             this.statFullExpBtn.AutoSize = true;
-            this.statFullExpBtn.Location = new System.Drawing.Point(497, 3);
+            this.statFullExpBtn.Location = new System.Drawing.Point(470, 0);
             this.statFullExpBtn.Name = "statFullExpBtn";
-            this.statFullExpBtn.Size = new System.Drawing.Size(208, 35);
+            this.statFullExpBtn.Size = new System.Drawing.Size(167, 25);
             this.statFullExpBtn.TabIndex = 28;
             this.statFullExpBtn.Text = "Xuất dữ liệu ra file Excel";
             this.statFullExpBtn.UseVisualStyleBackColor = true;
@@ -528,10 +528,10 @@
             // 
             this.resTabCtrl.Controls.Add(this.resTab);
             this.resTabCtrl.Controls.Add(this.resTab2);
-            this.resTabCtrl.Location = new System.Drawing.Point(257, 396);
+            this.resTabCtrl.Location = new System.Drawing.Point(257, 428);
             this.resTabCtrl.Name = "resTabCtrl";
             this.resTabCtrl.SelectedIndex = 0;
-            this.resTabCtrl.Size = new System.Drawing.Size(1058, 270);
+            this.resTabCtrl.Size = new System.Drawing.Size(1053, 270);
             this.resTabCtrl.TabIndex = 37;
             // 
             // resTab
@@ -540,8 +540,8 @@
             this.resTab.Controls.Add(this.resultGrid);
             this.resTab.Location = new System.Drawing.Point(4, 24);
             this.resTab.Name = "resTab";
-            this.resTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.resTab.Size = new System.Drawing.Size(1050, 242);
+            this.resTab.Padding = new System.Windows.Forms.Padding(3);
+            this.resTab.Size = new System.Drawing.Size(1045, 242);
             this.resTab.TabIndex = 0;
             this.resTab.Text = "Theo đơn vị";
             this.resTab.UseVisualStyleBackColor = true;
@@ -549,9 +549,9 @@
             // resultExpBtn
             // 
             this.resultExpBtn.AutoSize = true;
-            this.resultExpBtn.Location = new System.Drawing.Point(882, 0);
+            this.resultExpBtn.Location = new System.Drawing.Point(875, 0);
             this.resultExpBtn.Name = "resultExpBtn";
-            this.resultExpBtn.Size = new System.Drawing.Size(167, 28);
+            this.resultExpBtn.Size = new System.Drawing.Size(167, 25);
             this.resultExpBtn.TabIndex = 21;
             this.resultExpBtn.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn.UseVisualStyleBackColor = true;
@@ -581,7 +581,7 @@
             this.resultGrid.ReadOnly = true;
             this.resultGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.resultGrid.RowTemplate.Height = 25;
-            this.resultGrid.Size = new System.Drawing.Size(1044, 210);
+            this.resultGrid.Size = new System.Drawing.Size(1039, 210);
             this.resultGrid.TabIndex = 20;
             // 
             // resSchoolCode
@@ -653,8 +653,8 @@
             this.resTab2.Controls.Add(this.resultGrid2);
             this.resTab2.Location = new System.Drawing.Point(4, 24);
             this.resTab2.Name = "resTab2";
-            this.resTab2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.resTab2.Size = new System.Drawing.Size(1050, 242);
+            this.resTab2.Padding = new System.Windows.Forms.Padding(3);
+            this.resTab2.Size = new System.Drawing.Size(1045, 242);
             this.resTab2.TabIndex = 1;
             this.resTab2.Text = "Theo điểm thi";
             this.resTab2.UseVisualStyleBackColor = true;
@@ -662,9 +662,9 @@
             // resultExpBtn2
             // 
             this.resultExpBtn2.AutoSize = true;
-            this.resultExpBtn2.Location = new System.Drawing.Point(882, 0);
+            this.resultExpBtn2.Location = new System.Drawing.Point(875, 0);
             this.resultExpBtn2.Name = "resultExpBtn2";
-            this.resultExpBtn2.Size = new System.Drawing.Size(168, 25);
+            this.resultExpBtn2.Size = new System.Drawing.Size(167, 25);
             this.resultExpBtn2.TabIndex = 36;
             this.resultExpBtn2.Text = "Xuất kết quả ra file Excel";
             this.resultExpBtn2.UseVisualStyleBackColor = true;
@@ -689,12 +689,12 @@
             this.res2T3,
             this.res2T4});
             this.resultGrid2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.resultGrid2.Location = new System.Drawing.Point(3, 26);
+            this.resultGrid2.Location = new System.Drawing.Point(3, 29);
             this.resultGrid2.Name = "resultGrid2";
             this.resultGrid2.ReadOnly = true;
             this.resultGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.resultGrid2.RowTemplate.Height = 25;
-            this.resultGrid2.Size = new System.Drawing.Size(1044, 213);
+            this.resultGrid2.Size = new System.Drawing.Size(1039, 210);
             this.resultGrid2.TabIndex = 35;
             // 
             // resSchoolCode2
@@ -763,10 +763,10 @@
             // needTabCtrl
             // 
             this.needTabCtrl.Controls.Add(this.needTab);
-            this.needTabCtrl.Location = new System.Drawing.Point(662, 138);
+            this.needTabCtrl.Location = new System.Drawing.Point(662, 170);
             this.needTabCtrl.Name = "needTabCtrl";
             this.needTabCtrl.SelectedIndex = 0;
-            this.needTabCtrl.Size = new System.Drawing.Size(653, 247);
+            this.needTabCtrl.Size = new System.Drawing.Size(648, 247);
             this.needTabCtrl.TabIndex = 38;
             // 
             // needTab
@@ -776,8 +776,8 @@
             this.needTab.Controls.Add(this.needExpBtn);
             this.needTab.Location = new System.Drawing.Point(4, 24);
             this.needTab.Name = "needTab";
-            this.needTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.needTab.Size = new System.Drawing.Size(645, 219);
+            this.needTab.Padding = new System.Windows.Forms.Padding(3);
+            this.needTab.Size = new System.Drawing.Size(640, 219);
             this.needTab.TabIndex = 0;
             this.needTab.Text = "Danh sách thống kê";
             this.needTab.UseVisualStyleBackColor = true;
@@ -785,7 +785,7 @@
             // button2
             // 
             this.button2.AutoSize = true;
-            this.button2.Location = new System.Drawing.Point(15, 479);
+            this.button2.Location = new System.Drawing.Point(15, 511);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(228, 25);
             this.button2.TabIndex = 40;
@@ -796,7 +796,7 @@
             // statSampleBtn
             // 
             this.statSampleBtn.AutoSize = true;
-            this.statSampleBtn.Location = new System.Drawing.Point(613, 62);
+            this.statSampleBtn.Location = new System.Drawing.Point(614, 94);
             this.statSampleBtn.Name = "statSampleBtn";
             this.statSampleBtn.Size = new System.Drawing.Size(42, 25);
             this.statSampleBtn.TabIndex = 42;
@@ -807,7 +807,7 @@
             // needSampleBtn
             // 
             this.needSampleBtn.AutoSize = true;
-            this.needSampleBtn.Location = new System.Drawing.Point(1267, 62);
+            this.needSampleBtn.Location = new System.Drawing.Point(1261, 94);
             this.needSampleBtn.Name = "needSampleBtn";
             this.needSampleBtn.Size = new System.Drawing.Size(42, 25);
             this.needSampleBtn.TabIndex = 44;
@@ -818,7 +818,7 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(514, 93);
+            this.button1.Location = new System.Drawing.Point(510, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 25);
             this.button1.TabIndex = 27;
